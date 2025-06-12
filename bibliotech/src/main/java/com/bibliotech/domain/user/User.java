@@ -1,5 +1,8 @@
 package com.bibliotech.domain.user;
 
+import com.bibliotech.domain.book.Book;
+
+import java.util.List;
 import java.util.UUID;
 
 public class User {
@@ -9,6 +12,7 @@ public class User {
     private String password;
     private UserType userType;
     private Status status;
+    private List<Book> borrowedBooks;
 
     public User(UUID id, String name, String email, String password, UserType userType, Status status) {
         this.id = id;
@@ -17,6 +21,14 @@ public class User {
         this.password = password;
         this.userType = userType;
         this.status = status;
+    }
+
+    public List<Book> getBorrowedBooks() {
+        return borrowedBooks;
+    }
+
+    public void setBorrowedBooks(List<Book> borrowedBooks) {
+        this.borrowedBooks = borrowedBooks;
     }
 
     public UUID getId() {

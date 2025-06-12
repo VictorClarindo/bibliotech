@@ -1,4 +1,20 @@
 package com.bibliotech.domain.user;
 
-public record UserDTO() {
+import com.bibliotech.domain.book.Book;
+
+import java.util.List;
+import java.util.UUID;
+
+public record UserDTO(
+    UUID id,
+    String name,
+    String email,
+    UserType userType,
+    Status status,
+    List<Book> borrowedBooks
+){
+    public List<Book> borrowedBooks(){
+        return List.copyOf(borrowedBooks);
+    }
 }
+
