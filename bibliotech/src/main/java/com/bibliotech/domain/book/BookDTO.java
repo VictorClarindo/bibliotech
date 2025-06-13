@@ -1,4 +1,13 @@
 package com.bibliotech.domain.book;
 
-public record BookDTO() {
-}
+import java.util.UUID;
+
+public record BookDTO(
+    UUID BookId,
+    String title,
+    String author,
+    String coverImage,
+    String ISBN,
+    BookCategory category,
+    Integer quantityInStock
+) {}

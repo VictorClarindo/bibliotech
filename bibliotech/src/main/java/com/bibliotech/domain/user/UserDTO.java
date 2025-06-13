@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 public record UserDTO(
-    UUID id,
+    UUID UserId,
     String name,
     String email,
     UserType userType,

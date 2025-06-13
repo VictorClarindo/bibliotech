@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class User {
-    private UUID id;
+    private UUID UserId;
     private String name;
     private String email;
     private String password;
@@ -14,8 +14,8 @@ public class User {
     private Status status;
     private List<Book> borrowedBooks;
 
-    public User(UUID id, String name, String email, String password, UserType userType, Status status) {
-        this.id = id;
+    public User(UUID UserId, String name, String email, String password, UserType userType, Status status) {
+        this.UserId = UserId;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -31,8 +31,8 @@ public class User {
         this.borrowedBooks = borrowedBooks;
     }
 
-    public UUID getId() {
-        return id;
+    public UUID getUserId() {
+        return UserId;
     }
 
     public String getName() {
@@ -55,8 +55,8 @@ public class User {
         return status;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setUserId(UUID UserId) {
+        this.UserId = UserId;
     }
 
     public void setName(String name) {
