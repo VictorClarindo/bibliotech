@@ -8,6 +8,6 @@ public record BookDTO(
     String author,
     String coverImage,
     String ISBN,
-    BookCategory category,
+    Genre category,
     Integer quantityInStock
 ) {}

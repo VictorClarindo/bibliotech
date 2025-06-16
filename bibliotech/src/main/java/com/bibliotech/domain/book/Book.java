@@ -1,7 +1,5 @@
 package com.bibliotech.domain.book;
 
-import com.bibliotech.domain.user.UserType;
-
 import java.util.UUID;
 
 public class Book {
@@ -10,16 +8,16 @@ public class Book {
     private String author;
     private String coverImage;
     private String ISBN;
-    private BookCategory category;
+    private Genre genre;
     private Integer quantityInStock;
 
-    public Book(UUID BookId, String title, String author, String coverImage, String ISBN, BookCategory category, Integer quantityInStock) {
+    public Book(UUID BookId, String title, String author, String coverImage, String ISBN, Genre genre, Integer quantityInStock) {
         this.BookId = BookId;
         this.title = title;
         this.author = author;
         this.coverImage = coverImage;
         this.ISBN = ISBN;
-        this.category = category;
+        this.genre = genre;
         this.quantityInStock = quantityInStock;
     }
 
@@ -47,8 +45,8 @@ public class Book {
         this.ISBN = ISBN;
     }
 
-    public void setCategory(BookCategory category) {
-        this.category = category;
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
     public void setQuantityInStock(Integer quantityInStock) {
@@ -71,8 +69,8 @@ public class Book {
         return ISBN;
     }
 
-    public BookCategory getCategory() {
-        return category;
+    public Genre getGenre() {
+        return genre;
     }
 
     public Integer getQuantityInStock() {

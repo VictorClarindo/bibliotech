@@ -12,7 +12,6 @@ public class User {
     private String password;
     private UserType userType;
     private Status status;
-    private List<Book> borrowedBooks;
 
     public User(UUID UserId, String name, String email, String password, UserType userType, Status status) {
         this.UserId = UserId;
@@ -21,14 +20,6 @@ public class User {
         this.password = password;
         this.userType = userType;
         this.status = status;
-    }
-
-    public List<Book> getBorrowedBooks() {
-        return borrowedBooks;
-    }
-
-    public void setBorrowedBooks(List<Book> borrowedBooks) {
-        this.borrowedBooks = borrowedBooks;
     }
 
     public UUID getUserId() {

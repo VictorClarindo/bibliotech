@@ -1,6 +1,6 @@
 package com.bibliotech.domain.book;
 
-public enum BookCategory {
+public enum Genre {
     FICTION("Fiction"),
     MYSTERY("Mystery"),
     THRILLER("Thriller"),
@@ -24,7 +24,7 @@ public enum BookCategory {
 
     private final String displayName;
 
-    BookCategory(String displayName){
+    Genre(String displayName){
         this.displayName = displayName;
     }
 
