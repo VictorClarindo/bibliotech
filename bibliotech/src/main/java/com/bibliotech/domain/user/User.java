@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.UUID;
 
 public class User {
-    private UUID UserId;
+    private Long UserId;
     private String name;
     private String email;
     private String password;
     private UserType userType;
     private Status status;
 
-    public User(UUID UserId, String name, String email, String password, UserType userType, Status status) {
+    public User(Long UserId, String name, String email, String password, UserType userType, Status status) {
         this.UserId = UserId;
         this.name = name;
         this.email = email;
@@ -22,7 +22,7 @@ public class User {
         this.status = status;
     }
 
-    public UUID getUserId() {
+    public Long getUserId() {
         return UserId;
     }
 
@@ -46,7 +46,7 @@ public class User {
         return status;
     }
 
-    public void setUserId(UUID UserId) {
+    public void setUserId(Long UserId) {
         this.UserId = UserId;
     }
 

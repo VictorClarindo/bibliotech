@@ -3,7 +3,7 @@ package com.bibliotech.domain.book;
 import java.util.UUID;
 
 public class Book {
-    private UUID BookId;
+    private Long BookId;
     private String title;
     private String author;
     private String coverImage;
@@ -11,7 +11,7 @@ public class Book {
     private Genre genre;
     private Integer quantityInStock;
 
-    public Book(UUID BookId, String title, String author, String coverImage, String ISBN, Genre genre, Integer quantityInStock) {
+    public Book(Long BookId, String title, String author, String coverImage, String ISBN, Genre genre, Integer quantityInStock) {
         this.BookId = BookId;
         this.title = title;
         this.author = author;
@@ -21,11 +21,11 @@ public class Book {
         this.quantityInStock = quantityInStock;
     }
 
-    public UUID getBookId() {
+    public Long getBookId() {
         return BookId;
     }
 
-    public void setId(UUID BookId) {
+    public void setId(Long BookId) {
         this.BookId = BookId;
     }
 

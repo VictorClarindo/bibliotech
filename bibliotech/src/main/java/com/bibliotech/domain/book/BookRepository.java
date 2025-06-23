@@ -9,9 +9,9 @@ import java.util.UUID;
 public interface BookRepository {
     Book save(Book book);
 
-    Optional<Book> findById(UUID id);
+    Optional<Book> findById(Long id);
 
     List<Book> findAll();
 
-    void deleteById(UUID id);
+    void deleteById(Long id);
 }
