@@ -3,20 +3,29 @@ package com.bibliotech.adapters.output.persistence;
 import com.bibliotech.adapters.output.persistence.jpaEntities.JpaUserEntity;
 import com.bibliotech.domain.user.User;
 import com.bibliotech.domain.user.UserRepository;
+import com.bibliotech.infrastructure.mappers.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class UserRepositoryImpl implements UserRepository {
-    JpaUserRepository jpaUserRepository;
 
-    public UserRepositoryImpl(JpaUserRepository jpaUserRepository) {
+    private final JpaUserRepository jpaUserRepository;
+    private final UserMapper userMapper;
+
+    public UserRepositoryImpl(JpaUserRepository jpaUserRepository, UserMapper userMapper) {
         this.jpaUserRepository = jpaUserRepository;
+        this.userMapper = userMapper;
     }
 
     @Override
-    public void save(User user) {
-            jpaUserRepository.save(user);
+    public User save(User user) {
+        JpaUserEntity jpaUser = userMapper.toJpaUser(user);
+        jpaUserRepository.save(jpaUser);
+        return user;
     }
 
     @Override

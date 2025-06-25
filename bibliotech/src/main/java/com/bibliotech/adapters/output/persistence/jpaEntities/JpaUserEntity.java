@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "tb_user")
 @SequenceGenerator(name= "seq_user", sequenceName = "seq_user", allocationSize = 1, initialValue = 1)
 public class JpaUserEntity {
     @Id

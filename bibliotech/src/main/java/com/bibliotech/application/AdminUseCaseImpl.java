@@ -6,10 +6,13 @@ import com.bibliotech.domain.usecases.AdminUseCases;
 import com.bibliotech.domain.user.Status;
 import com.bibliotech.domain.user.User;
 import com.bibliotech.domain.user.UserType;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AdminUseCaseImpl implements AdminUseCases {
 
-    UserRepositoryImpl userRepository;
+    private final UserRepositoryImpl userRepository;
 
     public AdminUseCaseImpl(UserRepositoryImpl userRepository) {
         this.userRepository = userRepository;
