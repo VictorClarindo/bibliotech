@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public record loanDTO(
-        UUID loanId,
+        Long loanId,
         User user,
         Book book,
         LocalDate loanDate,

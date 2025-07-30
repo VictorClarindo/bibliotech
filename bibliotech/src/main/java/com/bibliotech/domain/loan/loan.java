@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public class loan {
-    private UUID loanId;
+    private Long loanId;
     private User user;
     private Book book;
     private LocalDate loanDate;
@@ -15,7 +15,7 @@ public class loan {
     private LocalDate returnDate;
     private LoanStatus status;
 
-    public loan(UUID loanId, User user, Book book, LocalDate loanDate, LocalDate dueDate, LocalDate returnDate, LoanStatus status) {
+    public loan(Long loanId, User user, Book book, LocalDate loanDate, LocalDate dueDate, LocalDate returnDate, LoanStatus status) {
         this.loanId = loanId;
         this.user = user;
         this.book = book;
@@ -25,11 +25,11 @@ public class loan {
         this.status = status;
     }
 
-    public UUID getLoanId() {
+    public Long getLoanId() {
         return loanId;
     }
 
-    public void setLoanId(UUID loanId) {
+    public void setLoanId(Long loanId) {
         this.loanId = loanId;
     }
 

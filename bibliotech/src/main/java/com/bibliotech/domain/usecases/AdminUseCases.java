@@ -1,4 +1,7 @@
 package com.bibliotech.domain.usecases;
 
-public class AdminUseCases {
+import com.bibliotech.domain.user.User;
+
+public interface AdminUseCases {
+    public User createAdminUser(String name, String email, String password);
 }
