@@ -13,6 +13,9 @@ public class User {
     private UserType userType;
     private Status status;
 
+    public User() {
+    }
+
     public User(Long UserId, String name, String email, String password, UserType userType, Status status) {
         this.UserId = UserId;
         this.name = name;

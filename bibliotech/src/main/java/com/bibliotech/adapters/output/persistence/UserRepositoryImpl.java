@@ -4,7 +4,6 @@ import com.bibliotech.adapters.output.persistence.jpaEntities.JpaUserEntity;
 import com.bibliotech.domain.user.User;
 import com.bibliotech.domain.user.UserRepository;
 import com.bibliotech.infrastructure.mappers.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User save(User user) {
-        JpaUserEntity jpaUser = userMapper.toJpaUser(user);
+        JpaUserEntity jpaUser = userMapper.UserToJpaUser(user);
         jpaUserRepository.save(jpaUser);
         return user;
     }

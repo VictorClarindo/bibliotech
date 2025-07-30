@@ -1,6 +1,7 @@
 package com.bibliotech.infrastructure.cli;
 
 import com.bibliotech.application.AdminUseCaseImpl;
+import com.bibliotech.domain.usecases.AdminUseCases;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +10,7 @@ import java.util.Arrays;
 @Component
 public class AdminCreation implements CommandLineRunner {
 
-    private final AdminUseCaseImpl adminUseCase;
+    private final AdminUseCases adminUseCase;
 
     public AdminCreation(AdminUseCaseImpl adminUseCase) {
         this.adminUseCase = adminUseCase;
@@ -44,7 +45,7 @@ public class AdminCreation implements CommandLineRunner {
         }
 
         try{
-            adminUseCase.createAdminUser(args[0], args[1], args[2]);
+            adminUseCase.createAdminUser(args[1], args[2], args[3]);
             System.out.println("User admin was created succesfully: " + args[1]);
         } catch (Exception e) {
             System.out.println("Error creating ADMIN user: " + e.getMessage());

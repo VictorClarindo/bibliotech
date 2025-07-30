@@ -8,5 +8,5 @@ import java.util.List;
 public interface UserUseCases {
     public User saveUser(UserDTO userDTO);
 
-    public List<User> findAll();
+    public List<UserDTO> findAll();
 }
