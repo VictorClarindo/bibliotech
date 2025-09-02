@@ -17,16 +17,15 @@ public class UserController {
 
     private final UserUseCases userUseCase;
 
-    public UserController(UserRepositoryImpl userRepository, UserUseCaseImpl userUseCase) {
+    public UserController(UserUseCaseImpl userUseCase) {
         this.userUseCase = userUseCase;
     }
 
-//    @PostMapping(value = "create-test")
-//    public ResponseEntity<User> createUser(@RequestBody CreateUserRequestDTO request){
-//        User user = new User(request.userId(), request.name(),request.email(), request.password(), UserType.ADMIN, Status.APPROVED);
-//        userUseCase.saveUser(userTest);
-//        return ResponseEntity.ok(userTest);
-//    }
+    @PostMapping(value = "create")
+    public ResponseEntity<User> createUser(@RequestBody CreateUserRequestDTO userRequestDTO){
+        User user = userUseCase.saveUser(userRequestDTO);
+        return ResponseEntity.ok(user);
+    }
 
     @GetMapping(value = "/teste")
     public ResponseEntity<String> test(){

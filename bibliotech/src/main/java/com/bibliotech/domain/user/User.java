@@ -25,6 +25,14 @@ public class User {
         this.status = status;
     }
 
+    public User(String name, String email, String password, UserType userType, Status status) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.userType = userType;
+        this.status = status;
+    }
+
     public Long getUserId() {
         return UserId;
     }

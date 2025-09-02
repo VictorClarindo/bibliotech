@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
@@ -23,8 +24,9 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User save(User user) {
         JpaUserEntity jpaUser = userMapper.UserToJpaUser(user);
+        User user1 = userMapper.JpaUserToUser(jpaUser);
         jpaUserRepository.save(jpaUser);
-        return user;
+        return user1;
     }
 
     @Override
@@ -34,7 +36,10 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<User> findAll() {
-        return List.of();
+        return jpaUserRepository
+                .findAll()
+                .stream()
+                .map(userMapper::JpaUserToUser).collect(Collectors.toList());
     }
 
     @Override

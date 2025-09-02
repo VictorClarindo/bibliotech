@@ -2,9 +2,7 @@ package com.bibliotech.application;
 
 import com.bibliotech.adapters.output.persistence.UserRepositoryImpl;
 import com.bibliotech.domain.usecases.UserUseCases;
-import com.bibliotech.domain.user.User;
-import com.bibliotech.domain.user.UserDTO;
-import com.bibliotech.domain.user.UserRepository;
+import com.bibliotech.domain.user.*;
 import com.bibliotech.infrastructure.mappers.UserMapper;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +22,10 @@ public class UserUseCaseImpl implements UserUseCases {
     }
 
     @Override
-    public User saveUser(UserDTO userDTO) {
-        return null;
+    public User saveUser(CreateUserRequestDTO requestDTO) {
+        User user = new User(requestDTO.name(), requestDTO.email(), requestDTO.password(), UserType.MEMBER, Status.PENDING);
+        userRepository.save(user);
+        return user;
     }
 
     @Override
